@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "namecheap" {
+  client_ip = "123.123.123.123"
+}
+
 # https://thomaseckert.dev
 #
 # Personal site. Hosted on Vercel.
