@@ -13,6 +13,11 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     environment: production
+    env:
+      NAMECHEAP_API_KEY: ${{ secrets.NAMECHEAP_API_KEY }}
+      NAMECHEAP_API_USER: ${{ secrets.NAMECHEAP_API_USER }}
+      NAMECHEAP_CLIENT_IP: ${{ secrets.NAMECHEAP_CLIENT_IP }}
+      NAMECHEAP_USER_NAME: ${{ secrets.NAMECHEAP_USER_NAME }}
 
     defaults:
       run:
@@ -26,13 +31,6 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-    - name: Setup Environment Variables
-      run: |
-        export NAMECHEAP_API_KEY=${{ secrets.NAMECHEAP_API_KEY }}
-        export NAMECHEAP_API_USER=${{ secrets.NAMECHEAP_API_USER }}
-        export NAMECHEAP_CLIENT_IP=${{ secrets.NAMECHEAP_CLIENT_IP }}
-        export NAMECHEAP_USER_NAME=${{ secrets.NAMECHEAP_USER_NAME }}
 
     - name: Terraform Init
       run: terraform init
