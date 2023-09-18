@@ -69,13 +69,7 @@ resource "namecheap_domain_records" "devy-page" {
   record {
     hostname = "api."
     type     = "A"
-    address  = "66.241.124.167"
-  }
-
-  record {
-    hostname = "api."
-    type     = "AAAA"
-    address  = "2a09:8280:1::2d:4921"
+    address  = "20.241.184.48"
   }
 }
 
