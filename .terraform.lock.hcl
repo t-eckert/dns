@@ -6,6 +6,7 @@ provider "registry.terraform.io/namecheap/namecheap" {
   constraints = ">= 2.0.0"
   hashes = [
     "h1:p8LqzJtI4Mkxhcam2s73eFJzctlAZXZJ0Wwgd51Kyto=",
+    "h1:wYjp1Gs7wf2J+VtkLmTRO6mALieCFhS0HYsQUwAbAUI=",
     "zh:3731f5f14a0958cd27a589ef7daa9be786b6490f2309c429eb2e9862aa4ac5f7",
     "zh:3cbceb12ec3521d9dfbd890eee731a40f4e1f42de30d28fc1d1e524091148caa",
     "zh:44095af1b1d1ee6d4b930e21e3c5bf0f81d9df65fe04f6f1e55d46713c240b21",

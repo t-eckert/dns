@@ -68,8 +68,14 @@ resource "namecheap_domain_records" "devy-page" {
 
   record {
     hostname = "api."
-    type     = "A"
-    address  = "20.241.184.48"
+    type     = "CNAME"
+    address  = "backend-devy.3.us-1.fl0.io"
+  }
+
+  record {
+    hostname = "devy.api."
+    type     = "CNAME"
+    address  = "dev-backend-devy.3.us-1.fl0.io"
   }
 }
 
