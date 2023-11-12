@@ -67,13 +67,19 @@ resource "namecheap_domain_records" "devy-page" {
   }
 
   record {
-    hostname = "api."
+    hostname = "dev"
+    type     = "CNAME"
+    address  = "cname.vercel-dns.com."
+  }
+
+  record {
+    hostname = "api"
     type     = "CNAME"
     address  = "backend-devy.3.us-1.fl0.io"
   }
 
   record {
-    hostname = "devy.api."
+    hostname = "dev.api"
     type     = "CNAME"
     address  = "dev-backend-devy.3.us-1.fl0.io"
   }
