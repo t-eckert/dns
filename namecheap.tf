@@ -74,14 +74,8 @@ resource "namecheap_domain_records" "devy-page" {
 
   record {
     hostname = "api"
-    type     = "CNAME"
-    address  = "backend-devy.3.us-1.fl0.io"
-  }
-
-  record {
-    hostname = "dev.api"
-    type     = "CNAME"
-    address  = "dev-backend-devy.3.us-1.fl0.io"
+    type     = "A"
+    address  = "66.241.125.234"
   }
 }
 
@@ -103,23 +97,4 @@ resource "namecheap_domain_records" "gee-wsgi-com" {
   }
 
 }
-
-# https://gee-wsgi.info
-resource "namecheap_domain_records" "gee-wsgi-info" {
-  domain = "gee-wsgi.info"
-  mode   = "OVERWRITE"
-
-  record {
-    address  = "http://www.gee-wsgi.info/"
-    hostname = "@"
-    type     = "URL"
-  }
-
-  record {
-    address  = "parkingpage.namecheap.com."
-    hostname = "www"
-    type     = "CNAME"
-  }
-}
-
 
