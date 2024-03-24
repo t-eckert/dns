@@ -74,27 +74,9 @@ resource "namecheap_domain_records" "devy-page" {
 
   record {
     hostname = "api"
-    type     = "A"
-    address  = "66.241.125.234"
-  }
-}
-
-# https://gee-wsgi.com
-resource "namecheap_domain_records" "gee-wsgi-com" {
-  domain = "gee-wsgi.com"
-  mode   = "OVERWRITE"
-
-  record {
-    address  = "http://www.gee-wsgi.com/"
-    hostname = "@"
-    type     = "URL"
-  }
-
-  record {
-    address  = "parkingpage.namecheap.com."
-    hostname = "www"
     type     = "CNAME"
+    address  = "devy.fly.dev."
   }
-
 }
+
 
