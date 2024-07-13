@@ -56,26 +56,14 @@ resource "namecheap_domain_records" "devy-page" {
 
   record {
     hostname = "@"
-    type     = "A"
-    address  = "76.76.21.21"
+    type     = "CNAME"
+    address  = "devy-frontend.fly.dev."
   }
 
   record {
     hostname = "www"
     type     = "CNAME"
-    address  = "cname.vercel-dns.com."
-  }
-
-  record {
-    hostname = "dev"
-    type     = "CNAME"
-    address  = "cname.vercel-dns.com."
-  }
-
-  record {
-    hostname = "api"
-    type     = "CNAME"
-    address  = "devy.fly.dev."
+    address  = "devy-frontend.fly.dev."
   }
 }
 
