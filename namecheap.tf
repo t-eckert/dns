@@ -25,6 +25,12 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
     type     = "CNAME"
     address  = "cname.vercel-dns.com."
   }
+
+  record {
+    hostname = "_atproto"
+    type     = "TXT"
+    address  = "did=did:plc:4oreta6v74d5shrudhk4o6q5"
+  }
 }
 
 # https://gradienthub.art
@@ -49,7 +55,7 @@ resource "namecheap_domain_records" "gradienthub-art" {
 
 # https://devy.page
 #
-# Developer blogs in markdown. Hosted on Vercel.
+# Developer blogs in markdown. Hosted on Fly.
 resource "namecheap_domain_records" "devy-page" {
   domain = "devy.page"
   mode   = "OVERWRITE"
@@ -64,6 +70,19 @@ resource "namecheap_domain_records" "devy-page" {
     hostname = "www"
     type     = "CNAME"
     address  = "devy-frontend.fly.dev."
+  }
+
+
+  record {
+    hostname = "api"
+    type     = "CNAME"
+    address  = "devy-api.fly.dev."
+  }
+
+  record {
+    hostname = "www.api"
+    type     = "CNAME"
+    address  = "devy-api.fly.dev."
   }
 }
 
