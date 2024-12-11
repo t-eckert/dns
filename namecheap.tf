@@ -86,4 +86,20 @@ resource "namecheap_domain_records" "devy-page" {
   }
 }
 
+resource "namecheap_domain_records" "field-theories" {
+  domain = "fieldtheories.blog"
+  mode   = "OVERWRITE"
+
+  record {
+    hostname = "@"
+    type     = "CNAME"
+    address  = "field-theories.fly.dev"
+  }
+
+  record {
+    hostname = "www"
+    type     = "CNAME"
+    address  = "field-theories.fly.dev"
+  }
+}
 
