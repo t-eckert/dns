@@ -16,14 +16,14 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
 
   record {
     hostname = "@"
-    type     = "A"
-    address  = "76.76.21.21"
+    type     = "CNAME"
+    address  = "thomaseckert-dev.fly.dev"
   }
 
   record {
     hostname = "www"
     type     = "CNAME"
-    address  = "cname.vercel-dns.com."
+    address  = "thomaseckert-dev.fly.dev"
   }
 
   record {
