@@ -33,6 +33,26 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
   }
 }
 
+# https://offseasonmag.com
+#
+# Official site for the Offseason literary journal.
+resource "namecheap_domain_records" "offseasonmag-com" {
+  domain = "offseasonmag.com"
+  mode   = "OVERWRITE"
+
+  record {
+    hostname = "@"
+    type     = "A"
+    address  = "76.76.21.21"
+  }
+
+  record {
+    hostname = "www"
+    type     = "CNAME"
+    address  = "cname.vercel-dns.com."
+  }
+}
+
 # https://gradienthub.art
 #
 # Create and share CSS gradients. Hosted on Fly.
