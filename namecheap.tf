@@ -51,6 +51,12 @@ resource "namecheap_domain_records" "offseasonmag-com" {
     type     = "CNAME"
     address  = "cname.vercel-dns.com."
   }
+
+  record {
+    hostname = "studio"
+    type     = "CNAME"
+    address  = "cname.vercel-dns.com."
+  }
 }
 
 # https://gradienthub.art
