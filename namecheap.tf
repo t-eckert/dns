@@ -31,6 +31,12 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
     type     = "TXT"
     address  = "did=did:plc:4oreta6v74d5shrudhk4o6q5"
   }
+
+  record {
+    hostname = "__acme-challenge"
+    type     = "CNAME"
+    address  = "thomaseckert.dev.g65w3o.flydns.net."
+  }
 }
 
 # https://offseasonmag.com
