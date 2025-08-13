@@ -43,8 +43,9 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
 #
 # Official site for the Offseason literary journal.
 resource "namecheap_domain_records" "offseasonmag-com" {
-  domain = "offseasonmag.com"
-  mode   = "OVERWRITE"
+  domain     = "offseasonmag.com"
+  mode       = "OVERWRITE"
+  email_type = "MX"
 
   record {
     hostname = "@"
@@ -68,6 +69,30 @@ resource "namecheap_domain_records" "offseasonmag-com" {
     hostname = "dev"
     type     = "CNAME"
     address  = "fd8eb14a73ceba13.vercel-dns-016.com"
+  }
+
+  record {
+    hostname = "send"
+    type     = "MX"
+    address  = "feedback-smtp.us-east-1.amazonses.com"
+  }
+
+  record {
+    hostname = "send"
+    type     = "TXT"
+    address  = "v=spf1 include:amazonses.com ~all"
+  }
+
+  record {
+    hostname = "resend._domainkey"
+    type     = "TXT"
+    address  = "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDMSv4Yfvsh9D1Z0Y3GKk08g7zgvrR2a/YL3kyMESped2TJE4rKu6ZUq/OXfwdNjocowv+fbwJ9ZS8cp5CNH0fV1WSjZIwZ3IRIzc9NwMi6dsdgXnv1QSPkR1HwSjW9H+5iJmoTvHNPCarqlgB8pz8lYrJPGrVYkm4LoikzT+erJQIDAQAB"
+  }
+
+  record {
+    hostname = "_dmarc"
+    type     = "TXT"
+    address  = "v=DMARC1; p=none;"
   }
 }
 
