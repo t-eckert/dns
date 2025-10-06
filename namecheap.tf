@@ -164,5 +164,11 @@ resource "namecheap_domain_records" "field-theories" {
     type     = "CNAME"
     address  = "field-theories.fly.dev"
   }
+
+  record {
+    hostname = "images"
+    type     = "CNAME"
+    address  = "field-theories.fly.storage.tigris.dev"
+  }
 }
 
