@@ -9,11 +9,12 @@ terraform {
 
 # https://thomaseckert.dev
 #
-# Personal site. Hosted on Vercel.
+# Personal site. Hosted on Fly.
 resource "namecheap_domain_records" "thomaseckert-dev" {
   domain = "thomaseckert.dev"
   mode   = "OVERWRITE"
 
+  # Root domain to Fly
   record {
     hostname = "@"
     type     = "CNAME"
@@ -26,6 +27,7 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
     address  = "thomaseckert-dev.fly.dev"
   }
 
+  # Bluesky/ATProto
   record {
     hostname = "_atproto"
     type     = "TXT"
@@ -36,6 +38,13 @@ resource "namecheap_domain_records" "thomaseckert-dev" {
     hostname = "__acme-challenge"
     type     = "CNAME"
     address  = "thomaseckert.dev.g65w3o.flydns.net."
+  }
+
+  # Umami Analytics subdomain
+  record {
+    hostname = "umami"
+    type     = "CNAME"
+    address  = "umami.feist-gondola.ts.net"
   }
 }
 
@@ -149,6 +158,9 @@ resource "namecheap_domain_records" "devy-page" {
   }
 }
 
+# https://fieldtheories.blog
+#
+# Personal blog. Hosted on Fly, images on Tigris.
 resource "namecheap_domain_records" "field-theories" {
   domain = "fieldtheories.blog"
   mode   = "OVERWRITE"
